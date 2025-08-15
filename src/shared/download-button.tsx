@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { usePostHog } from 'posthog-js/react';
 import { Monitor, Apple } from 'lucide-react';
+import theme from '../theme';
 
 export function DownloadButton() {
   const [detectedOs, setDetectedOs] = useState<'windows' | 'mac' | 'linux' | null>(null);
@@ -29,10 +30,10 @@ export function DownloadButton() {
       id: 'windows' as const,
       name: 'Windows',
       icon: <Monitor className="w-6 h-6 text-white" />,
-      gradient: 'from-blue-400 to-cyan-400',
-      hoverGradient: 'from-blue-500/20 to-cyan-500/20',
-      hoverBorder: 'hover:border-blue-400/50',
-      textHover: 'group-hover:text-blue-300'
+      gradient: theme.classes.gradient,
+      hoverGradient: theme.classes.gradientHover,
+      hoverBorder: `hover:${theme.classes.border}`,
+      textHover: `group-hover:text-${theme.classes.primaryHover}`
     },
     {
       id: 'mac' as const,
