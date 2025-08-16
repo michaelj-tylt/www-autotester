@@ -11,7 +11,7 @@ import theme from '@/shared/themes/autotester';
 export default function HomePage() {
   return (
     <PageLayout 
-      homeUrl="/"
+      homeUrl={process.env.NEXT_PUBLIC_MAIN_URL}
       auroraColors={["#10B981", "#059669", "#0F172A"]}
       pixelColors="#10B981,#34D399,#059669"
       theme={theme}
